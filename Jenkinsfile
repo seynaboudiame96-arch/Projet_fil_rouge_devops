@@ -10,19 +10,19 @@ pipeline {
 
         stage('2. Build des images Docker') {
             steps {
-                sh 'docker compose build'
+                sh 'docker-compose build'
             }
         }
 
         stage('3. Déploiement des conteneurs') {
             steps {
-                sh 'docker compose up -d'
+                sh 'docker-compose up -d'
             }
         }
 
         stage('4. Vérification des services') {
             steps {
-                sh 'docker compose ps'
+                sh 'docker-compose ps'
             }
         }
     }
