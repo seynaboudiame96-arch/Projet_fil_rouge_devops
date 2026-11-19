@@ -1,5 +1,10 @@
+
 pipeline {
     agent any
+    environment {
+        MYSQL_ROOT_PASSWORD = 'rootpassword'
+        MYSQL_DATABASE = 'fil_rouge_db'
+    }
 
     stages {
         stage('1. Checkout Git') {
